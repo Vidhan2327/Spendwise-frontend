@@ -18,7 +18,7 @@ export default function Register() {
       const res = await authService.register(username, email, password);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      navigate("/app"); // go to dashboard inside layout
+      navigate("/app"); 
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
     } finally {
