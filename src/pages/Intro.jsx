@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Intro() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook to programmatically navigate to routes
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-white">

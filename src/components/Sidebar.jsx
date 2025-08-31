@@ -1,5 +1,5 @@
 import { NavLink as RouterNavLink } from "react-router-dom";
-import { HomeIcon, ChartPieIcon, Cog6ToothIcon, ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid';
+import { HomeIcon, ChartPieIcon, Cog6ToothIcon,  ArrowLeftStartOnRectangleIcon} from '@heroicons/react/24/solid';
 
 const SidebarLink = ({ icon: Icon, to, text, end }) => (
   <RouterNavLink
@@ -36,7 +36,7 @@ export default function Sidebar() {
       </div>
 
       <div className="mt-auto">
-        <SidebarLink icon={ArrowLeftOnRectangleIcon} to="/logout" text="Logout" />
+        <SidebarLink icon={ ArrowLeftStartOnRectangleIcon} to="/logout" text="Logout" />
       </div>
     </aside>
   );
