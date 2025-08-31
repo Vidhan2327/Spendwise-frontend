@@ -28,7 +28,7 @@ export default function Sidebar() {
         </div>
         <nav>
           <ul className="space-y-4">
-            <li><SidebarLink icon={HomeIcon} to="/app" text="Dashboard" end /></li> {/* only active on exact /app */}
+            <li><SidebarLink icon={HomeIcon} to="/app" text="Dashboard" end /></li> 
             <li><SidebarLink icon={ChartPieIcon} to="/app/budgets" text="Budgets" /></li>
             <li><SidebarLink icon={Cog6ToothIcon} to="/app/settings" text="Settings" /></li>
           </ul>
