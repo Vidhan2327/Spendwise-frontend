@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import authService from "../services/authService"; // make sure path is correct
+import authService from "../services/authService"; // ensure path is correct
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -17,7 +17,6 @@ export default function Register() {
     try {
       const res = await authService.register(username, email, password);
       localStorage.setItem("user", JSON.stringify(res.data.user));
-
       navigate("/app"); 
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");

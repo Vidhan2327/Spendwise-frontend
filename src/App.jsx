@@ -7,26 +7,37 @@ import Register from "./pages/Register";
 import Layout from "./Layout";
 import Budgets from "./pages/Budgets";
 import Settings from "./pages/Settings";
+import ProtectedRoute from "./components/ProtectedRoutes";
 import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public routes */}
+        
         <Route path="/" element={<Intro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* Protected Layout routes */}
-        <Route path="/app" element={<Layout />}>
-          <Route index element={<Dashboard />} /> {/* default page */}
-           <Route path="budgets" element={<Budgets />} />   {/* /app/budgets */}
-           <Route path="settings" element={<Settings />} /> {/* /app/settings */}
+      
+        <Route
+          path="/app/*"
+          element={
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
+          }
+        >
           
+          <Route index element={<Dashboard />} />  
+          <Route path="budgets" element={<Budgets />} />  
+          <Route path="settings" element={<Settings />} /> 
+
+          {/* Catch-all for any invalid /app/* path */}
+          <Route path="*" element={<Dashboard />} />       
         </Route>
 
-        {/* Catch-all route */}
+        {/* Catch-all route for everything else */}
         <Route path="*" element={<Intro />} />
       </Routes>
     </BrowserRouter>
